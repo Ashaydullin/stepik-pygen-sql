@@ -1,9 +1,7 @@
 SELECT
-    id,
-    name,
-    surname,
-    CONCAT(REPEAT('*', 12), RIGHT(card_number, 4)) AS card_number
+    CONCAT(LEFT(name, 1), '. ', surname) AS director
 FROM
-    Clients
-LIMIT
-    5;
+    Directors
+ORDER BY
+    director,
+    surname;
